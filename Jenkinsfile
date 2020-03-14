@@ -14,7 +14,7 @@ pipeline {
         stage('Docker push'){
             steps{
                 script{
-                    docker.withRegistry('https://348274457022.dkr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:sathya-aws') {
+                    docker.withRegistry('https://348274457022.ecr.ap-south-1.amazonaws.com', 'ecr:ap-south-1:sathya-aws') {
                         docker.image('flexiloans').push("$currentBuild.number")
                     }
                 }
